@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive personal portfolio built with HTML, CSS, and JavaScript.">
+  <title>Your Name | Interactive Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">Your Name<span>.</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">🌙 Dark mode</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">HELLO, WORLD!</p>
+        <h1>I'm <span>Your Name</span>.</h1>
+        <h2>A beginner learning web development</h2>
+        <p class="intro">I enjoy turning ideas into simple, useful websites. This interactive portfolio is built with HTML, CSS, and JavaScript.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#contact">Contact me</a>
+          <a class="button button-secondary" href="#projects">View projects</a>
+        </div>
+        <p class="visit-count">You have visited this portfolio <strong id="visit-count">1</strong> time(s) on this browser.</p>
+      </div>
+      <div class="profile-card">
+        <img id="profile-image" src="images/profile.jpg" alt="Profile photo of Your Name" class="profile-image">
+        <p class="profile-caption" id="profile-caption">Learning, building, improving.</p>
+        <div class="slider-controls">
+          <button id="previous-caption" class="small-button" type="button" aria-label="Previous caption">←</button>
+          <span id="slide-indicator">1 / 3</span>
+          <button id="next-caption" class="small-button" type="button" aria-label="Next caption">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="about">
+      <div class="container narrow">
+        <p class="eyebrow">A LITTLE ABOUT ME</p>
+        <h2 class="section-title">About Me</h2>
+        <p>I'm a web development beginner focused on learning the foundations of HTML, CSS, and JavaScript. I like solving problems, exploring new ideas, and improving a little every day.</p>
+        <button class="button button-secondary reveal-button" id="about-toggle" type="button" aria-expanded="false" aria-controls="more-about">Read more</button>
+        <p class="extra-about" id="more-about" hidden>I am practicing DOM manipulation, event listeners, form validation, and local storage by building this project. My goal is to create accessible and responsive websites.</p>
+      </div>
+    </section>
+
+    <section class="section container" id="skills">
+      <p class="eyebrow">WHAT I'M LEARNING</p>
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-grid">
+        <article class="skill-card"><span class="skill-number">01</span><h3>HTML5</h3><p>Building clear, semantic page structure.</p></article>
+        <article class="skill-card"><span class="skill-number">02</span><h3>CSS3</h3><p>Styling pages with responsive layouts.</p></article>
+        <article class="skill-card"><span class="skill-number">03</span><h3>JavaScript</h3><p>Adding interactions and dynamic behavior.</p></article>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="projects">
+      <div class="container">
+        <p class="eyebrow">A FEW THINGS I'VE BUILT</p>
+        <h2 class="section-title">Mini Project: To-do List</h2>
+        <p class="section-description">Add tasks, mark them complete, or remove them. Tasks are saved in this browser using local storage.</p>
+        <form id="todo-form" class="todo-form">
+          <label class="visually-hidden" for="todo-input">New task</label>
+          <input id="todo-input" type="text" maxlength="120" placeholder="Add a task..." required>
+          <button class="button button-primary" type="submit">Add task</button>
+        </form>
+        <p id="todo-feedback" class="feedback" role="status" aria-live="polite"></p>
+        <ul id="todo-list" class="todo-list" aria-label="To-do tasks"></ul>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">LET'S CONNECT</p>
+          <h2 class="section-title">Contact Me</h2>
+          <p>Fill in the form. JavaScript checks the fields and shows clear feedback before opening your email app.</p>
+        </div>
+        <form id="contact-form" class="contact-form" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="name-error">
+          <span class="field-error" id="name-error"></span>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+          <span class="field-error" id="email-error"></span>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required minlength="10" aria-describedby="message-error"></textarea>
+          <span class="field-error" id="message-error"></span>
+
+          <button class="button button-primary" type="submit">Validate & compose email</button>
+          <p id="form-feedback" class="feedback" role="status" aria-live="polite"></p>
+          <p class="form-note">Demo: a valid form opens your default email app. No message is sent or stored by a server.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="current-year">2026</span> Your Name. Built with HTML, CSS & JavaScript.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

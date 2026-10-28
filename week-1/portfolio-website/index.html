@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple personal portfolio website.">
+  <title>My Portfolio</title>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Beginner Web Developer</p>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a> |
+      <a href="#skills">Skills</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <img src="images/profile.jpg" alt="Profile photo of Your Name" width="180">
+      <p>Hello! I'm learning web development and building my first portfolio website with HTML.</p>
+    </section>
+
+    <section id="skills">
+      <h2>My Skills</h2>
+      <ul>
+        <li>HTML fundamentals</li>
+        <li>Creating web page layouts</li>
+        <li>Learning CSS and JavaScript</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="mailto:you@example.com" method="post" enctype="text/plain">
+        <p>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </p>
+        <button type="submit">Send Message</button>
+      </form>
+      <p><small>Note: This simple form opens the visitor's email app. A backend is needed for reliable form submissions.</small></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Your Name. Built with HTML.</p>
+  </footer>
+</body>
+</html>
